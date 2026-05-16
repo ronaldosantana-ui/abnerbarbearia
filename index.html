@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abner Barbearia — Belo Horizonte</title>
+  <meta name="description" content="Abner Barbearia em Belo Horizonte, MG. Corte, barba, cadeiras massageadoras. Avaliação 4,8 no Google. Agende online." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e0bf6a;
+      --gold-dim: rgba(201,168,76,0.15);
+      --gold-border: rgba(201,168,76,0.2);
+      --bg: #0a0a08;
+      --bg2: #0d0d0a;
+      --bg3: #111109;
+      --text: #e8e0cc;
+      --text-muted: #9a8e78;
+      --text-dim: #7a6e5a;
+      --text-faint: #5a5248;
+      --serif: 'Playfair Display', Georgia, serif;
+      --body: 'Crimson Pro', Georgia, serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body);
+      font-size: 18px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 48px;
+      background: rgba(10,10,8,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 0.5px solid var(--gold-border);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-scissors {
+      width: 36px;
+      height: 36px;
+    }
+
+    .logo-text .brand {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--text);
+      line-height: 1;
+    }
+    .logo-text .brand span { color: var(--gold); }
+    .logo-text .sub {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 10px 24px;
+      font-family: var(--body);
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.25s;
+      text-decoration: none;
+    }
+    .nav-cta:hover {
+      background: var(--gold);
+      color: var(--bg);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 90vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 70% 50%, rgba(201,168,76,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-left {
+      padding: 80px 56px 80px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 0.5px solid var(--gold-border);
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-h1 {
+      font-family: var(--serif);
+      font-size: 64px;
+      font-weight: 900;
+      line-height: 1.04;
+      color: var(--text);
+      margin-bottom: 28px;
+    }
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-body {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 40px;
+      max-width: 460px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--bg);
+      border: none;
+      padding: 16px 36px;
+      font-family: var(--body);
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.25s;
+      font-weight: 400;
+    }
+    .btn-primary:hover { background: var(--gold-light); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--text-muted);
+      border: none;
+      font-family: var(--body);
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+    .btn-ghost::after { content: '→'; font-size: 16px; }
+    .btn-ghost:hover { color: var(--gold); }
+
+    .hero-rating {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-top: 32px;
+      border-top: 0.5px solid var(--gold-border);
+    }
+
+    .stars { color: var(--gold); letter-spacing: 2px; font-size: 16px; }
+
+    .rating-label {
+      font-size: 14px;
+      color: var(--text-dim);
+    }
+    .rating-label strong { color: var(--text); }
+
+    /* HERO RIGHT */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-img-main {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: sepia(0.1) contrast(1.05) brightness(0.9);
+    }
+
+    .hero-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(10,10,8,0.4) 0%, transparent 40%),
+                  linear-gradient(to top, rgba(10,10,8,0.6) 0%, transparent 50%);
+    }
+
+    .hero-badge {
+      position: absolute;
+      top: 32px;
+      right: 32px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+    }
+    .hero-badge .num { font-size: 26px; font-weight: 700; line-height: 1; }
+    .hero-badge .lbl { font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; font-family: var(--body); }
+
+    .hero-bottom-tag {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 40px 32px 24px;
+      background: linear-gradient(transparent, rgba(10,10,8,0.85));
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ===== DIVIDER QUOTE ===== */
+    .divider-quote {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 52px 56px;
+      border-top: 0.5px solid var(--gold-border);
+      border-bottom: 0.5px solid var(--gold-border);
+      background: var(--bg2);
+    }
+
+    .dq-orn { color: var(--gold); font-size: 28px; opacity: 0.35; flex-shrink: 0; }
+
+    .dq-text {
+      flex: 1;
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text);
+      text-align: center;
+      letter-spacing: 0.02em;
+      line-height: 1.4;
+    }
+
+    /* ===== FEATURES ===== */
+    .features {
+      padding: 80px 56px;
+      border-bottom: 0.5px solid var(--gold-border);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
+    .section-sub {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--text-dim);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gold-border);
+      border: 0.5px solid var(--gold-border);
+    }
+
+    .feat-card {
+      background: var(--bg);
+      padding: 40px 32px;
+      transition: background 0.3s;
+    }
+    .feat-card:hover { background: var(--bg3); }
+
+    .feat-icon {
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(201,168,76,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 22px;
+      margin-bottom: 22px;
+    }
+
+    .feat-title {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .feat-desc {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-dim);
+      line-height: 1.75;
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery {
+      padding: 80px 56px;
+      background: var(--bg2);
+      border-bottom: 0.5px solid var(--gold-border);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 280px 280px;
+      gap: 4px;
+      margin-top: 52px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery-item:first-child {
+      grid-row: 1 / 3;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      filter: sepia(0.1) contrast(1.05);
+    }
+    .gallery-item:hover img { transform: scale(1.04); }
+
+    .gallery-item-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 30px 20px 14px;
+      background: linear-gradient(transparent, rgba(10,10,8,0.75));
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials {
+      padding: 80px 56px;
+      border-bottom: 0.5px solid var(--gold-border);
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 52px;
+    }
+
+    .testi-card {
+      background: var(--bg2);
+      border: 0.5px solid var(--gold-border);
+      padding: 32px;
+      position: relative;
+    }
+
+    .testi-card::before {
+      content: '\201C';
+      position: absolute;
+      top: 12px;
+      right: 20px;
+      font-family: var(--serif);
+      font-size: 80px;
+      color: rgba(201,168,76,0.08);
+      line-height: 1;
+    }
+
+    .testi-stars {
+      display: flex;
+      gap: 3px;
+      color: var(--gold);
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .testi-text {
+      font-size: 16px;
+      font-weight: 300;
+      font-style: italic;
+      color: #c8c0ae;
+      line-height: 1.8;
+      margin-bottom: 22px;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-top: 18px;
+      border-top: 0.5px solid rgba(201,168,76,0.1);
+    }
+
+    .testi-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 13px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .testi-name {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: 0.04em;
+    }
+    .testi-via {
+      font-size: 12px;
+      color: var(--text-faint);
+      letter-spacing: 0.1em;
+    }
+
+    /* ===== INFO GRID ===== */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 0.5px solid var(--gold-border);
+    }
+
+    .info-col {
+      padding: 64px 56px;
+    }
+
+    .info-col:first-child {
+      border-right: 0.5px solid var(--gold-border);
+    }
+
+    .info-title {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .info-title::before {
+      content: '';
+      width: 26px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hours-list { list-style: none; }
+
+    .hours-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 0.5px solid rgba(201,168,76,0.07);
+      font-size: 15px;
+    }
+
+    .hours-day { color: var(--text-muted); font-weight: 300; }
+    .hours-time { color: var(--gold); letter-spacing: 0.05em; }
+    .hours-closed { color: var(--text-faint); }
+
+    .contact-item {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 28px;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      width: 42px;
+      height: 42px;
+      border: 0.5px solid rgba(201,168,76,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 20px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .contact-label {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 4px;
+    }
+
+    .contact-value {
+      font-size: 15px;
+      color: var(--text-muted);
+      font-weight: 300;
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+    .contact-value:hover { color: var(--gold); }
+
+    /* ===== FOOTER CTA ===== */
+    .footer-cta {
+      padding: 96px 56px;
+      text-align: center;
+      border-bottom: 0.5px solid var(--gold-border);
+      background: var(--bg2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-cta::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      border: 0.5px solid rgba(201,168,76,0.05);
+      pointer-events: none;
+    }
+    .footer-cta::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      border: 0.5px solid rgba(201,168,76,0.04);
+      pointer-events: none;
+    }
+
+    .footer-cta-title {
+      font-family: var(--serif);
+      font-size: 52px;
+      font-weight: 900;
+      color: var(--text);
+      margin-bottom: 18px;
+      position: relative;
+    }
+    .footer-cta-title em { font-style: italic; color: var(--gold); }
+
+    .footer-cta-sub {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--text-dim);
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 32px 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--text-faint);
+      letter-spacing: 0.08em;
+    }
+
+    .footer-brand {
+      font-family: var(--serif);
+      font-size: 18px;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .footer-links a {
+      color: var(--text-faint);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.25s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { height: 55vw; }
+      .hero-left { padding: 48px 24px; }
+      .hero-h1 { font-size: 42px; }
+      .features { padding: 56px 24px; }
+      .features-grid { grid-template-columns: 1fr; }
+      .gallery { padding: 56px 24px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .gallery-item:first-child { grid-row: auto; }
+      .testimonials { padding: 56px 24px; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .info-grid { grid-template-columns: 1fr; }
+      .info-col { padding: 48px 24px; }
+      .info-col:first-child { border-right: none; border-bottom: 0.5px solid var(--gold-border); }
+      .footer-cta { padding: 64px 24px; }
+      .footer-cta-title { font-size: 36px; }
+      footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px 24px; }
+      .divider-quote { padding: 40px 24px; }
+      .dq-text { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#" class="nav-logo">
+      <svg class="logo-scissors" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 7 L18 2 L22 7" stroke="#c9a84c" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+        <circle cx="11" cy="29" r="4" stroke="#c9a84c" stroke-width="1.3" fill="none"/>
+        <circle cx="25" cy="29" r="4" stroke="#c9a84c" stroke-width="1.3" fill="none"/>
+        <path d="M11 25 L18 9 L25 25" stroke="#c9a84c" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="18" y1="14" x2="18" y2="20" stroke="#c9a84c" stroke-width="1" stroke-dasharray="2,2"/>
+      </svg>
+      <div class="logo-text">
+        <div class="brand"><span>A</span>BNER</div>
+        <div class="sub">Barbearia</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#avaliacoes">Avaliações</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a href="https://sites.appbarber.com.br/abnerbarbearia-karx" target="_blank" class="nav-cta">Agendar Horário</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Belo Horizonte · Itatiaia</div>
+      <h1 class="hero-h1">
+        Diferente<br>
+        como todo homem<br>
+        <em>deve ser.</em>
+      </h1>
+      <p class="hero-body">
+        Uma experiência de barbearia que vai além do corte. Ambiente sofisticado, profissionais de excelência e cadeiras massageadoras para o seu relaxamento total.
+      </p>
+      <div class="hero-actions">
+        <a href="https://sites.appbarber.com.br/abnerbarbearia-karx" target="_blank" class="btn-primary">Agendar Online</a>
+        <a href="tel:3134764482" class="btn-ghost">Ligar Agora</a>
+      </div>
+      <div class="hero-rating">
+        <div class="stars">★★★★★</div>
+        <div class="rating-label"><strong>4,8</strong> · 120 avaliações no Google</div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <!-- TROQUE O src PELA SUA IMAGEM -->
+      <img src="foto-proprietario.png" alt="Proprietário Abner Barbearia" class="hero-img-main" />
+      <div class="hero-img-overlay"></div>
+      <div class="hero-badge">
+        <span class="num">4.8</span>
+        <span class="lbl">Google</span>
+      </div>
+      <div class="hero-bottom-tag">Sala de Corte Premium</div>
+    </div>
+  </section>
+
+  <!-- QUOTE DIVIDER -->
+  <div class="divider-quote">
+    <span class="dq-orn">✦</span>
+    <p class="dq-text">"Enquanto nossos barbers cuidam do seu visual, a cadeira alivia sua tensão."</p>
+    <span class="dq-orn">✦</span>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="features" id="servicos">
+    <div class="section-header">
+      <div class="section-eyebrow">O que nos distingue</div>
+      <h2 class="section-title">Uma experiência completa</h2>
+      <p class="section-sub">Cada detalhe pensado para que sua visita seja memorável</p>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-icon"><i class="ti ti-armchair"></i></div>
+        <div class="feat-title">Cadeiras Massageadoras</div>
+        <p class="feat-desc">Relaxe enquanto cuidamos do seu estilo. Tecnologia de massagem integrada às cadeiras da sala de corte, sem custo adicional.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><i class="ti ti-calendar-check"></i></div>
+        <div class="feat-title">Agendamento Online</div>
+        <p class="feat-desc">Reserve seu horário com facilidade pelo nosso sistema. Sem esperas desnecessárias, sem surpresas.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><i class="ti ti-scissors"></i></div>
+        <div class="feat-title">Profissionais de Elite</div>
+        <p class="feat-desc">Barbers especializados em cortes modernos, barba tradicional e navalha. Técnica refinada, resultado impecável.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><i class="ti ti-building"></i></div>
+        <div class="feat-title">Ambiente Sofisticado</div>
+        <p class="feat-desc">Espaço projetado para o homem moderno. Cada elemento do ambiente reflete cuidado e requinte.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><i class="ti ti-droplet"></i></div>
+        <div class="feat-title">Produtos Selecionados</div>
+        <p class="feat-desc">Utilizamos linhas de produtos premium para garantir o melhor resultado e cuidado para a sua pele e cabelo.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><i class="ti ti-star"></i></div>
+        <div class="feat-title">Experiência 5 Estrelas</div>
+        <p class="feat-desc">120+ avaliações com nota 4,8 no Google. A satisfação dos clientes é a nossa maior conquista.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="galeria">
+    <div class="section-header">
+      <div class="section-eyebrow">Nossa Estrutura</div>
+      <h2 class="section-title">Galeria</h2>
+      <p class="section-sub">Conheça o espaço e os trabalhos da Abner Barbearia</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <!-- FOTO PRINCIPAL: sala de corte -->
+        <img src="sala-de-corte.png" alt="Sala de Corte Abner Barbearia" />
+        <div class="gallery-item-overlay">Sala de Corte</div>
+      </div>
+      <div class="gallery-item">
+        <!-- CORTE EXEMPLO -->
+        <img src="corte-exemplo.png" alt="Exemplo de corte Abner Barbearia" />
+        <div class="gallery-item-overlay">Corte & Design</div>
+      </div>
+      <div class="gallery-item">
+        <!-- CADEIRA MASSAGEADORA -->
+        <img src="cadeira-massageadora.png" alt="Cadeira massageadora Abner Barbearia" />
+        <div class="gallery-item-overlay">Cadeira Massageadora</div>
+      </div>
+      <div class="gallery-item">
+        <!-- BANNER SLOGAN -->
+        <img src="banner-slogan.png" alt="Abner Barbearia" />
+        <div class="gallery-item-overlay">Diferenciais</div>
+      </div>
+      <div class="gallery-item">
+        <!-- FOTO PROPRIETÁRIO (REPETIDA OU OUTRA) -->
+        <img src="foto-proprietario.png" alt="Proprietário Abner Barbearia" style="object-position: center 15%;" />
+        <div class="gallery-item-overlay">Equipe</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="avaliacoes">
+    <div class="section-header">
+      <div class="section-eyebrow">O que dizem nossos clientes</div>
+      <h2 class="section-title">Avaliações reais</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Ótimos profissionais, espaço e estrutura bem aconchegantes. Atendimento excelente, com possibilidade de agendamento.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">MR</div>
+          <div>
+            <div class="testi-name">Marcos Ramos Jr.</div>
+            <div class="testi-via">Google Reviews</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Profissionais muito atenciosos e competentes. E ainda tem outro diferencial: enquanto corta o cabelo, a cadeira massageia. Top demais!</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SO</div>
+          <div>
+            <div class="testi-name">Sérgio Oliveira Duarte</div>
+            <div class="testi-via">Google Reviews</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Lugar maravilhoso! Para mim é a melhor barbearia da região. Local limpo e super agradável. O Abner é um cara ímpar!</p>
+        <div class="testi-author">
+          <div class="testi-avatar">JJ</div>
+          <div>
+            <div class="testi-name">Jacobino Jacobino</div>
+            <div class="testi-via">Google Reviews</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Serviço impecável, lugar super agradável e o Abner é muito simpático! Nota 10!!!</p>
+        <div class="testi-author">
+          <div class="testi-avatar">LP</div>
+          <div>
+            <div class="testi-name">Leila Pires</div>
+            <div class="testi-via">Google Reviews</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO -->
+  <div class="info-grid" id="contato">
+    <div class="info-col">
+      <h3 class="info-title">Horários</h3>
+      <ul class="hours-list">
+        <li class="hours-item"><span class="hours-day">Segunda-feira</span><span class="hours-time">09:00 – 19:00</span></li>
+        <li class="hours-item"><span class="hours-day">Terça-feira</span><span class="hours-time">09:00 – 19:00</span></li>
+        <li class="hours-item"><span class="hours-day">Quarta-feira</span><span class="hours-time">09:00 – 19:00</span></li>
+        <li class="hours-item"><span class="hours-day">Quinta-feira</span><span class="hours-time">09:00 – 19:00</span></li>
+        <li class="hours-item"><span class="hours-day">Sexta-feira</span><span class="hours-time">09:00 – 19:00</span></li>
+        <li class="hours-item"><span class="hours-day">Sábado</span><span class="hours-time">09:00 – 19:00</span></li>
+        <li class="hours-item"><span class="hours-day">Domingo</span><span class="hours-closed">Fechado</span></li>
+      </ul>
+    </div>
+    <div class="info-col">
+      <h3 class="info-title">Contato &amp; Endereço</h3>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="ti ti-map-pin"></i></div>
+        <div>
+          <div class="contact-label">Endereço</div>
+          <a href="https://maps.google.com/?q=R.+Expedicionário+Paulo+de+Souza,+79,+Itatiaia,+Belo+Horizonte" target="_blank" class="contact-value">
+            R. Expedicionário Paulo de Souza, 79<br>Itatiaia, Belo Horizonte - MG
+          </a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="ti ti-phone"></i></div>
+        <div>
+          <div class="contact-label">Telefone</div>
+          <a href="tel:3134764482" class="contact-value">(31) 3476-4482</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="ti ti-brand-whatsapp"></i></div>
+        <div>
+          <div class="contact-label">WhatsApp</div>
+          <a href="https://wa.me/553134764482" target="_blank" class="contact-value">Falar pelo WhatsApp</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="ti ti-brand-instagram"></i></div>
+        <div>
+          <div class="contact-label">Instagram</div>
+          <a href="https://www.instagram.com/abnerbarbearia/" target="_blank" class="contact-value">@abnerbarbearia</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER CTA -->
+  <div class="footer-cta">
+    <h2 class="footer-cta-title">Pronto para ser <em>diferente?</em></h2>
+    <p class="footer-cta-sub">Agende seu horário agora e experimente o padrão Abner Barbearia.</p>
+    <a href="https://sites.appbarber.com.br/abnerbarbearia-karx" target="_blank" class="btn-primary" style="font-size:14px;padding:18px 48px;letter-spacing:0.22em;">Agendar Agora</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">ABNER BARBEARIA</div>
+    <ul class="footer-links">
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#contato">Contato</a></li>
+      <li><a href="https://www.instagram.com/abnerbarbearia/" target="_blank">Instagram</a></li>
+    </ul>
+    <div>© 2025 Abner Barbearia · Belo Horizonte, MG</div>
+  </footer>
+
+</body>
+</html>
